@@ -21,6 +21,15 @@ img {
     font-family: 'Edu TAS Beginner', sans-serif;
  }
 
+.title {
+    text-align: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 0;
+}
+
 
  /* MAIN */
  .main {
@@ -42,6 +51,7 @@ img {
 
 .ptrel {
     position: relative;
+
 }
 
  .p-style {

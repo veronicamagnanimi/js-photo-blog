@@ -6,8 +6,8 @@ let image = [];
 //esecuzione logica
 const printPosts = () => {
     image.forEach(curItem => {
-        rowElem.innerHTML += `<div class="col-12 col-md-6 col-lg-4 ptrel">
-                <div class="card">
+        rowElem.innerHTML += `<div class="col-12 col-md-6 col-lg-4 py-4 d-flex ptrel">
+                <div class="card flex-fill">
                     <img src="${curItem.thumbnailUrl}">
                     <div class="card-body">
                         <p class="p-style">${curItem.title}</p>

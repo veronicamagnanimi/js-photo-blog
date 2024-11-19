@@ -19,5 +19,35 @@ img {
 .header {
     background-image: url(../img/wall.png);
     font-family: 'Edu TAS Beginner', sans-serif;
-    }
+ }
+
+
+ /* MAIN */
+ .main {
+    background-image: url(../img/cork.png);
+    /* debug */
+    max-height: 600px;
+ }
+
+ .card {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+ }
+
+ .card::after {
+    content: url(../img/pin.svg);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+}
+
+.ptrel {
+    position: relative;
+}
+
+ .p-style {
+    font-family: "Edu TAS Beginner", cursive;
+ }
+
 

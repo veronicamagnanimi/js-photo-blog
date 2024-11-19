@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+.header {
+    background-image: url(../img/wall.png);
+    font-family: 'Edu TAS Beginner', sans-serif;
+    }
+

@@ -39,6 +39,7 @@ img {
  .card {
     background-color: rgb(255, 255, 255);
     padding: 15px;
+    cursor: pointer;
  }
 
  .card::after {
@@ -80,8 +81,7 @@ img {
  }
 
  #overlay-img {
-    margin: 2rem;
-    width: 10%;
+    margin: 2.rem 2 rem
  }
 
 

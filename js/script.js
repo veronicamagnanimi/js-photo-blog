@@ -3,11 +3,9 @@ const rowElem = document.querySelector(".row");
 const overlayElem = document.getElementById("overlay");
 const btnElem = document.getElementById("overlay-btn");
 const imgElem = document.getElementById("overlay-img");
-console.log(btnElem, overlayElem, imgElem);
 
 
 let image = [];
-
 
 //esecuzione logica
 const printPosts = () => {
@@ -23,13 +21,23 @@ const printPosts = () => {
     });
 }
 
+//funzioni per aggiungere/rimuovere l'overlay
+const addOverlay = () => {
+    overlayElem.classList.remove("d-none");
+    overlayElem.classList.add("d-flex");
+}
 
+const notOverlay = () => {
+    overlayElem.classList.remove("d-flex");
+    overlayElem.classList.add("d-none");
+}
+
+
+//evento sul click della card
 const addClick = () => {
     const cards = document.querySelectorAll(".card");
     cards.forEach(curCard => {
-        curCard.addEventListener("click", () => {
-            console.log("click", curCard.dataset.postId);
-        })
+        curCard.addEventListener("click", addOverlay);
     })
 }
 
@@ -41,4 +49,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6").then(resp => {
     addClick();
 })
 
+
+//evento bottone chiudi
+btnElem.addEventListener("click", notOverlay);
 

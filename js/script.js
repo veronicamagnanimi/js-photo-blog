@@ -21,23 +21,40 @@ const printPosts = () => {
     });
 }
 
-//funzioni per aggiungere/rimuovere l'overlay
-const addOverlay = () => {
+/////FUNZIONI//////
+
+//aggiungo l'overlay
+const addOverlay = (imageId) => {
+
+
+    const selectImg = image.find(itemImg => itemImg.id === imageId);  //trovo l'immagine con l'ID corrispondente
+    console.log(selectImg);
+
+    if (selectImg) {   //se l'immagine con l'id trovato sopra esiste, si aggiorna l'overlay
+
+        setTimeout(() => {   //l'immagine cliccata si aprirà in 3 millisecondi
+        imgElem.src = selectImg.url;
+    
     overlayElem.classList.remove("d-none");
     overlayElem.classList.add("d-flex");
-}
+}, 300);
+}}
 
-const notOverlay = () => {
+
+//nascondo l'overlay
+    const notOverlay = () => {
     overlayElem.classList.remove("d-flex");
     overlayElem.classList.add("d-none");
 }
 
-
-//evento sul click della card
+//evento sul click
 const addClick = () => {
     const cards = document.querySelectorAll(".card");
     cards.forEach(curCard => {
-        curCard.addEventListener("click", addOverlay);
+    curCard.addEventListener("click", () => {
+    const imageId = parseInt(curCard.dataset.postId); //l'attributo data mi restituisce la stringa, undefined, quindi converto per avere l'id
+        addOverlay(imageId);
+        });
     })
 }
 

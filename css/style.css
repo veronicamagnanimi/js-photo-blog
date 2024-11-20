@@ -50,6 +50,16 @@ img {
     transform: translate(-50%, -20%);
 }
 
+.card img {
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* modo fluido */
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* ombra iniziale */
+}
+
+.card:hover img {
+   transform: scale(1.1) rotate(10deg);  /*zoom e rotazione*/
+   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6); /* aumento ombra */ 
+}
+
 .posrel {
     position: relative;
 
@@ -59,7 +69,7 @@ img {
     font-family: "Edu TAS Beginner", cursive;
  }
 
-
+ 
  /* OVERLAY */
  #overlay {
     background-color: rgba(0, 0, 0, 0.5);

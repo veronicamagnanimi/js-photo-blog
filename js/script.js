@@ -1,4 +1,4 @@
-//prelevo elementi dal dom 
+//prelevo i nodi
 const rowElem = document.querySelector(".row");
 const overlayElem = document.getElementById("overlay");
 const btnElem = document.getElementById("overlay-btn");
@@ -7,11 +7,11 @@ const imgElem = document.getElementById("overlay-img");
 
 let image = [];
 
-//esecuzione logica
+//esecuzione logica data-post-id memorizza l'id dell'elemento
 const printPosts = () => {
     image.forEach(curItem => {
         rowElem.innerHTML += `<div class="col-12 col-md-6 col-lg-4 py-4 d-flex posrel">
-                <div class="card flex-fill" data-post-id="${curItem.id}">
+                <div class="card flex-fill" data-post-id="${curItem.id}"> 
                     <img src="${curItem.thumbnailUrl}">
                     <div class="card-body">
                         <p class="p-style">${curItem.title}</p>
@@ -26,18 +26,14 @@ const printPosts = () => {
 //aggiungo l'overlay
 const addOverlay = (imageId) => {
 
-
     const selectImg = image.find(itemImg => itemImg.id === imageId);  //trovo l'immagine con l'ID corrispondente
     console.log(selectImg);
 
     if (selectImg) {   //se l'immagine con l'id trovato sopra esiste, si aggiorna l'overlay
-
-        setTimeout(() => {   //l'immagine cliccata si aprirà in 3 millisecondi
         imgElem.src = selectImg.url;
     
     overlayElem.classList.remove("d-none");
     overlayElem.classList.add("d-flex");
-}, 300);
 }}
 
 
